@@ -129,18 +129,9 @@ void HIDKeyboard::pressKey(uint8_t key)
  ***************************************************************************/
 void HIDKeyboard::pressSpecialKey(uint8_t modifier, uint8_t specialKey) 
 {
-	if(specialKey <= 0x08) // Special key is a modifier, set to modifer
-	{
-		this->buf[0] = specialKey;
-		this->buf[2] = 0;
-		Serial.write(this->buf, 8);
-	}
-	else	// Special key is not a modifier, set to key
-	{
-		this->buf[0] = modifier;
-		this->buf[2] = specialKey;
-		Serial.write(this->buf, 8);
-	}
+	this->buf[0] = modifier;
+	this->buf[2] = specialKey;
+	Serial.write(this->buf, 8);
 }
 
 
@@ -158,7 +149,14 @@ void HIDKeyboard::pressSpecialKey(uint8_t modifier, uint8_t specialKey)
  ****************************************************************************/
 void HIDKeyboard::pressSpecialKey(uint8_t specialKey) 
 {
-	pressSpecialKey(0, specialKey);
+	if(specialKey <= 0x08)
+	{
+		pressSpecialKey(specialKey, 0);
+	}
+	else
+	{
+		pressSpecialKey(0, specialKey);
+	}
 }
 
 
