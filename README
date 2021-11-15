@@ -10,6 +10,10 @@ This firmware is meant to be installed on the ATMega8U2 on the UNO. I would atte
 
 NOTE that the ATMega328 cannot be programmed over USB when the arduino-keyboard firmware is installed on the ATMega8U2, you must flash the arduino-serial firmware again using FLIP, as explained in the above link.
 
+On Arduino Uno with ATmega16U2 is much simpler. You just need to install FLIP, short-circuit between the first two pins of the AREF (closest to the USB port) and use the FLIP to upload the new firmware. 
+Do the same process and upload the default arduino firmware to revert the changes.
+
+
 ON TO THE LIBRARY:
 
 The library defines a series of functions that make sending HID codes intuitive. Rather than having to look up and send HID codes for every character, the library takes care of it for you. Here's the jist:
