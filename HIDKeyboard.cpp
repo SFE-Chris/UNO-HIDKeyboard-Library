@@ -23,7 +23,22 @@
  * 		buf[0] = modifier (value 0 for no modifier)
  *		buf[1] = reserved
  *		buf[2] = HID value of key press
- *		buf[3:7] = reserved
+ *		buf[3:7] = Accept Other Keys to function as multiple presses! All can be used at the same time as a multiple key rollover!
+ *             
+ *             If [2:7] are selected on the same time, it works as the first char is sent but not terminated (both are pressed at the same time)
+ *             This means that the order of DECLARATION might affect the execution for a few softwares. 
+ *         
+ *             buf[2] = 0x73 //F24
+ *             buf[3] = 0xe0 // left control as a normal key
+ *
+ *             Result: F24 and control
+ *
+ *             IS (slightly) DIFFERENT THAN
+ *
+ *             buf[3] = 0xe0 // left control as a normal key
+ *             buf[2] = 0x73 //F24
+ *
+ *             Result: Control + F24
  *
  * The arduino-keyboard firmware for the ATMega8U2 can be found at 
  *		
