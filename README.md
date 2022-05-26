@@ -1,17 +1,31 @@
 # HIDKeyboard
 
 Originally written by Chris Taylor, this project has been depricated on Chris's part for ~10 years, so I fixed it up a bit for my own uses.
+The Arduino Installation files were obtained from https://github.com/unkwneuser/aurdino-uno-as-hid
 
 ## LIBRARY INSTALLATION:
 
 1. Download the .ZIP file of this repo
-
 2. Open the Arduino IDE and navigate the menu to:
 
     ```Sketch >> Include Library >> Add .ZIP Libarary```
+3. Choose the `HIDKeyboard.ZIP` file
     
-3. 
-    Choose the `HIDKeyboard.ZIP` file
+## ARDUINO INSTALLATION
+(designed for unix-based systems)
+
+1.  Install `dfu-programmer`
+    - debian -- `apt-get install dfu-programmer`
+    - arch -- `pacman -S dfu-programmer`
+    - gentoo -- `emerge -a dev-embedded/dfu-programmer`
+    - macos -- `brew install dfu-programmer`
+2.  Unzip the .ZIP file of this repo
+3.  `cd` to the unzipped directory of this repo
+    - `cd ~/Downloads/HIDKeyboard-Library`
+4.  Plug in Arduino
+5.  Run the flash file
+    - `./flash`
+    - You will be asked to 'reset the arduino.' This can be done by [shorting the top two pins in the ICSP2 pin cluster](https://user-images.githubusercontent.com/78560204/170391534-72d23c35-3f7f-4784-8d81-31873ce41b71.png).
 
 ## LIBRARY DOCS:
 
@@ -63,19 +77,19 @@ println()  // Sends keypresses for a full string, followed by a carriage return 
 HIDKeyboard Keyboard; 
 
 void setup() {
-	Keyboard.begin();  // Initializes keyboard
+    Keyboard.begin();  // Initializes keyboard
     delay(2000);  // Delay for 2 seconds
 }	
 
 void loop() {
-	Keyboard.println("Hello World!");  // Types "Hello World!" followed by a carriage return
-	Keyboard.pressSpecialKey(ENTER);  // Sends an "Enter" keypress
-	Keyboard.releaseKey();  // Releases "Enter"
-	Keyboard.pressKey('a');  // Types 'a'
-	Keyboard.releaseKey();  // Releases the 'a' key
-	Keyboard.pressKey(SHIFT, 'a');  // Types 'A'
-	Keyboard.releaseKey();  // Releases 'a' and SHIFT
-	while(1);  // Hold forever
+    Keyboard.println("Hello World!");  // Types "Hello World!" followed by a carriage return
+    Keyboard.pressSpecialKey(ENTER);  // Sends an "Enter" keypress
+    Keyboard.releaseKey();  // Releases "Enter"
+    Keyboard.pressKey('a');  // Types 'a'
+    Keyboard.releaseKey();  // Releases the 'a' key
+    Keyboard.pressKey(SHIFT, 'a');  // Types 'A'
+    Keyboard.releaseKey();  // Releases 'a' and SHIFT
+    while(1);  // Hold forever
 }
 ```
 
