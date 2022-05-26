@@ -1,30 +1,26 @@
 # HIDKeyboard
 
 Originally written by Chris Taylor, this project has been depricated on Chris's part for ~10 years, so I fixed it up a bit for my own uses.
-The Arduino Installation files were obtained from https://github.com/unkwneuser/aurdino-uno-as-hid
+
+The Arduino Installation files were obtained from https://github.com/unkwneuser/aurdino-uno-as-hid, but originated from https://mitchtech.net/arduino-usb-hid-keyboard/.
 
 ## LIBRARY INSTALLATION:
 
 1. Download the .ZIP file of this repo
 2. Open the Arduino IDE and navigate the menu to:
-
-    ```Sketch >> Include Library >> Add .ZIP Libarary```
+    `Sketch >> Include Library >> Add .ZIP Library`
 3. Choose the `HIDKeyboard.ZIP` file
     
 ## ARDUINO INSTALLATION
 (designed for unix-based systems)
 
-1.  Install `dfu-programmer`
-    - debian -- `apt-get install dfu-programmer`
-    - arch -- `pacman -S dfu-programmer`
-    - gentoo -- `emerge -a dev-embedded/dfu-programmer`
-    - macos -- `brew install dfu-programmer`
+1.  Install `dfu-programmer` with your package manager
 2.  Unzip the .ZIP file of this repo
-3.  `cd` to the unzipped directory of this repo
-    - `cd ~/Downloads/HIDKeyboard-Library`
-4.  Plug in Arduino
-5.  Run the flash file
-    - `./flash`
+3.  `cd` to the unzipped directory of this repo: 
+    `cd ~/Downloads/HIDKeyboard-Library`
+5.  Plug in Arduino
+6.  Run the flash file:
+    `./flash`
     - You will be asked to 'reset the arduino.' This can be done by [shorting the top two pins in the ICSP2 pin cluster](https://user-images.githubusercontent.com/78560204/170391534-72d23c35-3f7f-4784-8d81-31873ce41b71.png).
 
 ## LIBRARY DOCS:
