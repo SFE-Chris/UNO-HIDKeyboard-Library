@@ -17,7 +17,7 @@ The Arduino Installation files were obtained from https://github.com/unkwneuser/
 1.  Install `dfu-programmer` with your package manager
 2.  Unzip the .ZIP file of this repo
 3.  `cd` to the unzipped directory of this repo: 
-    `cd ~/Downloads/HIDKeyboard-Library`
+    `cd ~/Downloads/HIDKeyboard-Library/build`
 5.  Plug in Arduino
 6.  Run the flash file:
     `./flash`
