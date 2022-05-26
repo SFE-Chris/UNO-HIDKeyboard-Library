@@ -11,7 +11,7 @@ The Arduino Installation files were obtained from https://github.com/unkwneuser/
     `Sketch >> Include Library >> Add .ZIP Library`
 3. Choose the `HIDKeyboard.ZIP` file
     
-## ARDUINO INSTALLATION
+## ARDUINO INSTALLATION:
 (designed for unix-based systems)
 
 1.  Install `dfu-programmer` with your package manager
