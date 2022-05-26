@@ -1,4 +1,4 @@
-# HIDKeyboard
+# HIDKeyboard for Arduino Uno
 
 Originally written by Chris Taylor, this project has been untouched for ~10 years.
 
