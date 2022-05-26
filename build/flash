@@ -1,12 +1,12 @@
 #!/bin/bash
-echo "reset the aurdino (press enter to continue)"
+echo "reset the arduino (press enter to continue)"
 read
 dfu-programmer atmega16u2 erase
 dfu-programmer atmega16u2 flash --debug 1 Arduino-usbserial-uno.hex
 dfu-programmer atmega16u2 reset
 echo "plug cycle and program"
 read
-echo "reset the aurdino"
+echo "reset the arduino"
 read
 dfu-programmer atmega16u2 erase
 dfu-programmer atmega16u2 flash --debug 1 Arduino-keyboard-0.3.hex
