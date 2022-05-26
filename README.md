@@ -1,6 +1,6 @@
 # HIDKeyboard
 
-Originally written by Chris Taylor, this project has been depricated on Chris's part for ~10 years, so I fixed it up a bit for my own uses.
+Originally written by Chris Taylor, this project has been untouched for ~10 years.
 
 The Arduino Installation files were obtained from https://github.com/unkwneuser/aurdino-uno-as-hid, but originated from https://mitchtech.net/arduino-usb-hid-keyboard/.
 
